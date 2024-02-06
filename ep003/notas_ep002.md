@@ -1,0 +1,24 @@
+# En capitulos anteriores...
+
+- Distintas alternativas para usar Python de forma interactiva:
+    - ipython, bpython, jupyter notebooks, etc.
+    - atajos, realzado de sintaxis, autocompletar, ayuda interactiva...
+- Escribir programas en un fichero en lugar de una sesión interactiva:
+    - Nos permite escribir programas más grandes
+    - Revisar y corregir código que ya hemos escrito
+    - Usarlo más adelante y compartirlo
+- Usar un IDE (Integratred Development Enviroment):
+    - Realzado de sintaxis
+    - Muestra (algunos) errores antes de ejecutar
+    - Ayudas para *refactorizar* código
+    - Y mucho más...
+- Matemáticas:
+    - La secuencia de Fibonacci: `(1,) 1, 2, 3, 5, 8, 13...`
+        - Aparece en la naturaleza
+        - El ratio entre dos números tiende a φ
+- Python:
+    - Funciones recursivas vs iterativas
+    - bucle `while` para repetir un bloque mientras se da una condición
+    - `yield` para crear generadores en una función
+    - asignación de varias variables simultáneamente `a, b = c, d`
+    - usar el nombre de variable `_` para denotar que no la vamos a usar

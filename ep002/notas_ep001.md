@@ -1,0 +1,30 @@
+# En capítulos anteriores...
+
+- Instalar Python (en Windows)
+    - Abre la línea de comandos (`win+r`, `cmd`)
+    - Escribe `python`
+- La consola, por qué es importante para programar:
+    - Simplicidad
+    - Portabilidad (hay muchos modelos/interfaces de ventanas, pero la consola es bastante estándar)
+    - Modularidad
+- La hoja de cálculo como instrumento para resolver problemas
+    - Ventajas: visual, permite ver paso a paso qué ocurre, facilidad para estructurar datos
+    - Inconvenientes: poco concisa, más lenta
+- Python:
+    - variables: nombre que le damos a un espacio de memoria para guardar *cosas* (por ahora valores numéricos)
+    - operadores matemáticos:
+        - `+`: suma
+        - `-`: resta
+        - `*`: multiplicación
+        - `/`: división (con decimales)
+        - `//`: división (entera)
+        - `%`: resto de la división entera (módulo)
+        - `()`: agrupar expresiones
+    - bucle `for`: repetir una operación para todos los elementos de una secuencia, asignando el valor de cada elemento (por orden) a una variable
+    - rangos numéricos `range(n)`: 0...n-1
+    - condicional `if`: ejecutar de forma selectiva un bloque, dependiendo del valor de una expresión lógica
+    - comparación `a == b`: expresión lógica que es verdadera si el valor de `a` es igual al valor de `b`
+    - operador lógico `a or b`: combina dos expresiones lógicas, es verdadero si el valor de `a` o el valor de `b` es verdadero
+    - definir funciones `def`: permite reutilizar código
+    - función *built-in* `sum`: suma los elementos de una secuencia
+    - *generator expression* `n for n in seq if exp`: crea una secuencia a partir de otra, aplicando una expresión y filtros condicionales
