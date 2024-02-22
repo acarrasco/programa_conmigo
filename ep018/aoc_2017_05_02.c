@@ -7,6 +7,9 @@ int main(char** argv) {
     FILE *fp = fopen("input.txt", "r");
     int size = 0;
     while (fscanf(fp, "%d\n", &jumps[size]) > 0) {
+        if (size >= PROBLEM_SIZE) {
+            return -1;
+        }
         size++;
     }
 
