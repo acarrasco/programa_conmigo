@@ -1,0 +1,34 @@
+'''
+01 23 45
+67 89 ab
+
+cd ef gh
+ij kl mn
+
+op qr st
+uv wx yz
+'''
+
+'''
+01 23
+45 67
+
+89 ab
+cd ef
+'''
+
+
+'''
+012 345 678
+9ab cde fgh
+ijk lmn opq
+
+rst uvw xyz
+ABC DEF GHI
+JKL MNO PQR
+
+STU VWX YZ.
+!@# $%^ &*(
+)_+ <>? :[]
+'''
+

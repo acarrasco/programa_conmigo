@@ -1,0 +1,32 @@
+set b 93
+set c b
+jnz a 2
+jnz 1 5
+mul b 100
+sub b -100000
+set c b
+sub c -17000
+set f 1 # block A begin
+set d 2
+set e 2 # block B begin
+set g d # block C begin
+mul g e
+sub g b
+jnz g 2 # if g == 0
+set f 0
+sub e -1 # endif
+set g e
+sub g b
+jnz g -8 # block C end --> b=109300, c=126300, d=2, e=109300, f=0, g=0, 
+sub d -1
+set g d
+sub g b
+jnz g -13 # block B end
+jnz f 2 # if f == 0
+sub h -1
+set g b # endif
+sub g c
+jnz g 2 # if g == 0
+jnz 1 3 # end program
+sub b -17 # end if
+jnz 1 -23 # block A end
