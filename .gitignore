@@ -1,0 +1,7 @@
+input.txt
+test*.txt
+trace*.txt
+__pycache__
+.pytest_cache
+target
+.vscode
