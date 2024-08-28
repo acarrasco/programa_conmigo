@@ -1,0 +1,12 @@
+draw_from_b = n_draws - draw_from_a
+ways_to_draw_from_a = comb(set_a_size, draw_from_a)
+ways_to_draw_from_b = comb(set_b_size, draw_from_b)
+ways_to_reorder = factorial(n_draws)
+ways = ways_to_draw_from_a * ways_to_draw_from_b * ways_to_reorder
+
+comb(n, k) = n! / (k! * (n - k)!)
+
+ways_to_draw_from_a = set_a_size! / (draw_from_a! * (set_a_size - draw_from_a))
+ways_to_draw_from_b = set_b_size! / (draw_from_b! * (set_b_size - draw_from_b))
+ways_to_reorder = (draw_from_a + draw_from_b)!
+ways = (set_a_size! / (draw_from_a! * (set_a_size - draw_from_a))) * (set_b_size! / (draw_from_b! * (set_b_size - draw_from_b))) * (draw_from_a + draw_from_b)!
