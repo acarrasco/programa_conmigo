@@ -5,9 +5,9 @@ def solve(urinals):
     n = len(urinals)
     complexity = O(n*n*n*log(n))
     '''
+    occupied_urinals_indices = [j for (j, v) in enumerate(urinals) if v == '1']
     def key(i):
-        occupied_urinals = ((j, v) for (j, v) in enumerate(urinals) if v == '1')
-        distances_to_occupied = sorted(abs(i-j) for j, v in occupied_urinals)
+        distances_to_occupied = sorted(abs(i-j) for j in occupied_urinals_indices)
         return distances_to_occupied, i
     empty_urinal_indices = (i for i, u in enumerate(urinals) if u=='0')
     return max(empty_urinal_indices, default='N/A', key=key)

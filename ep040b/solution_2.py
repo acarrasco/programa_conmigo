@@ -29,8 +29,7 @@ def get_empty_candidates(occupied_indices, size):
 def solve(urinals):
     occupied_urinal_indices = [j for (j, v) in enumerate(urinals) if v == '1']
     def key(i):
-        occupied_urinals = ((j, v) for (j, v) in enumerate(urinals) if v == '1')
-        distances_to_occupied = sorted(abs(i-j) for j, v in occupied_urinals)
+        distances_to_occupied = sorted(abs(i-j) for j in occupied_urinal_indices)
         return distances_to_occupied, i
     candidates = get_empty_candidates(occupied_urinal_indices, len(urinals))
     return max(candidates, default='N/A', key=key)
