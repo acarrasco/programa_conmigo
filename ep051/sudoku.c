@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 typedef int bool;
 #define TRUE 1
@@ -131,6 +131,13 @@ bool resolver_recursivo(int i, int j)
     int k;
     int si, sj;
 
+    // si hemos terminado el tablero
+    if (i == 9 && j == 0)
+    {
+        return TRUE;
+    }
+
+    // calculamos la siguiente celda
     si = i;
     sj = j + 1;
     if (sj == 9)
@@ -149,11 +156,7 @@ bool resolver_recursivo(int i, int j)
         if (es_valido(n, i, j))
         {
             tablero_busq[i][j] = n;
-            if (i == 8 && j == 8)
-            {
-                return TRUE;
-            }
-            else if (resolver_recursivo(si, sj))
+            if (resolver_recursivo(si, sj))
             {
                 return TRUE;
             }
