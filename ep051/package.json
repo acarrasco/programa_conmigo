@@ -1,0 +1,21 @@
+{
+  "name": "ep051",
+  "version": "1.0.0",
+  "main": "src/sudoku.ts",
+  "scripts": {
+    "test": "mocha --require ts-node/register ./test/**/*.test.ts",
+    "test:watch": "mocha --require ts-node/register ./test/**/*.test.ts --watch --watch-files ./sudoku.ts,./test/**/*.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.10.0",
+    "chai": "^6.2.0",
+    "mocha": "^11.7.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
