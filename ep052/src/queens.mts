@@ -126,6 +126,19 @@ type UndoItem<Option extends string, Constraint extends string> = {
     rows: Set<Option>;
 };
 
+function isSolvable<Option extends string, Constraint extends string>(
+    matrix: SparseBooleanMatrix<Option, Constraint>,
+    hard_constraints: Set<Constraint>): boolean {
+
+    const columns = matrix.getColumns();
+    for (const col of hard_constraints.keys()) {
+        if (columns[col] && columns[col].size === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
 function solve<Option extends string, Constraint extends string>(problem: Problem<Option, Constraint>): Option[] {
 
     const hard_constraints = new Set<Constraint>(problem.hard_constraints);
@@ -159,7 +172,7 @@ function solve<Option extends string, Constraint extends string>(problem: Proble
         } while(undo_item.type !== 'option');
 
         let next_option = undo_item.option_index + 1;
-        while (next_option < options.length) {
+        while (next_option < options.length && isSolvable(matrix, hard_constraints)) {
             while (next_option < options.length && !matrix.hasRow(options[next_option]!)) {
                 next_option++;
             }

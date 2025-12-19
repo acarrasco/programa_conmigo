@@ -88,4 +88,12 @@ export class SparseBooleanMatrix<R extends string, C extends string> {
     public hasColumn(c: C): boolean {
         return Object.hasOwn(this.cols, c);
     }
+
+    public getRows(): Partial<Record<R, Set<C>>> {
+        return this.rows;
+    }
+
+    public getColumns(): Partial<Record<C, Set<R>>> {
+        return this.cols;
+    }
 }
