@@ -1,0 +1,19 @@
+{
+  "name": "ep053",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "src/main.mts",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "typescript": "^5.9.3",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0"
+  }
+}
