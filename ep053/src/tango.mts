@@ -40,6 +40,7 @@ export class Tango {
   private candidateSolution: Solution;
   private solutionSize: number;
   private placedValues: number;
+  public movementsTried = 0;
 
   constructor(private input: Input) {
     this.placedValues = input.values.length;
@@ -199,6 +200,7 @@ export class Tango {
   }
 
   solve(): boolean {
+    this.movementsTried++;
     if (this.placedValues == this.solutionSize) {
       return true;
     }
@@ -220,7 +222,6 @@ export class Tango {
     // guess any non ilegal move
     for (const [[i, j], v] of this.possibleMovesIterator()) {
       const moveAttempt: ValueDef = [[i, j], v];
-      console.log(this.placedValues);
       if (this.isValidMove(moveAttempt)) {
         this.placeValue(i, j, v);
         const solved = this.solve();

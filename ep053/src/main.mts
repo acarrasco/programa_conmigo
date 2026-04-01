@@ -20,4 +20,5 @@ const filename = process.argv[2];
 const input = await parseInput(filename!);
 const problem = new Tango(input);
 problem.solve();
+console.log(`Movements tried: ${problem.movementsTried}`);
 console.log(problem.formatSolution());
