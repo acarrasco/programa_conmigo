@@ -1,6 +1,5 @@
 #include<stdio.h>
 
-typedef int bool;
 #define TRUE 1
 #define FALSE 0
 
@@ -13,6 +12,8 @@ int tablero_busq[SIZE][SIZE];
 
 int posibles[SIZE][SIZE][SIZE + 1]; // +1 para el centinela
 
+long long movimientos = 0;
+
 void leer_tablero();
 long long calcular_posibles();
 int calcular_posibles_casilla(int i, int j);
@@ -23,7 +24,7 @@ bool esta_en_fila(int n, int i);
 bool esta_en_columna(int n, int j);
 bool esta_en_cuadrante(int n, int i, int j);
 void print_posibilidades();
-void print_tablero();
+
 
 /**
  * Rellena posibles para todas las casillas, y devuelve
@@ -110,14 +111,14 @@ bool esta_en_columna(int n, int j)
  */
 bool esta_en_cuadrante(int n, int i, int j)
 {
-    int cuad_i = i / REGION_ROWS;
-    int cuad_j = j / REGION_COLS;
-    int max_ci = (cuad_i + 1) * REGION_ROWS;
-    int max_cj = (cuad_j + 1) * REGION_COLS;
+    int min_i = i - i % REGION_ROWS;
+    int min_j = j - j % REGION_COLS;
+    int max_ci = min_i + REGION_ROWS;
+    int max_cj = min_j + REGION_COLS;
 
-    for (i = cuad_i * REGION_ROWS; i < max_ci; ++i)
+    for (i = min_i; i < max_ci; ++i)
     {
-        for (j = cuad_j * REGION_COLS; j < max_cj; ++j)
+        for (j = min_j; j < max_cj; ++j)
         {
             if (tablero_busq[i][j] == n)
             {
@@ -133,6 +134,8 @@ bool resolver_recursivo(int i, int j)
     int n;
     int k;
     int si, sj;
+
+    movimientos++;
 
     si = i;
     sj = j + 1;
@@ -238,4 +241,5 @@ int main()
         printf("solución no encontrada :(\n");
     }
     print_tablero(tablero_busq);
+    printf("movimientos realizados %d\n", movimientos);
 }

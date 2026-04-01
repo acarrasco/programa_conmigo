@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-typedef int bool;
 #define TRUE 1
 #define FALSE 0
 
@@ -8,6 +7,8 @@ int tablero_orig[9][9];
 int tablero_busq[9][9];
 
 int posibles[9][9][10];
+
+long long movimientos = 0;
 
 void leer_tablero();
 long long calcular_posibles();
@@ -19,7 +20,6 @@ bool esta_en_fila(int n, int i);
 bool esta_en_columna(int n, int j);
 bool esta_en_cuadrante(int n, int i, int j);
 void print_posibilidades();
-void print_tablero();
 
 /**
  * Rellena posibles para todas las casillas, y devuelve
@@ -131,6 +131,8 @@ bool resolver_recursivo(int i, int j)
     int k;
     int si, sj;
 
+    movimientos++;
+
     // si hemos terminado el tablero
     if (i == 9 && j == 0)
     {
@@ -238,4 +240,5 @@ int main()
         printf("solución no encontrada :(\n");
     }
     print_tablero(tablero_busq);
+    printf("movimientos realizados %d\n", movimientos);
 }
