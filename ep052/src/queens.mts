@@ -69,8 +69,7 @@ function makeExactCoverQueensProblem(grid: string[][]): Problem<string, string> 
     // define constraints (columns)
 
     for (let i = 0; i < size; i++) {
-        const name = `row ${i}`;
-        hard_constraints_headers.push(name);
+        hard_constraints_headers.push(rowConstraintName(i));
     }
 
     for (let j = 0; j < size; j++) {
@@ -146,6 +145,7 @@ function solve<Option extends string, Constraint extends string>(problem: Proble
     const undo_stack: UndoItem<Option, Constraint>[] = [];
     const matrix = problem.exact_cover_constraints;
     const options = problem.options;
+    let movements = 0;
 
     undo_stack.push({
         type: 'option',
@@ -179,6 +179,7 @@ function solve<Option extends string, Constraint extends string>(problem: Proble
         
             const option = options[next_option];
             if (option) {
+                movements++;
                 undo_stack.push({
                     type: 'option',
                     option_index: next_option,
@@ -209,7 +210,7 @@ function solve<Option extends string, Constraint extends string>(problem: Proble
         }
     }
 
-    console.log('finish');
+  console.log(`Movements tried: ${movements}`);
 
     const solution = undo_stack.filter(item => item.type === 'option').map(item => options[item.option_index]!);
     return solution;
@@ -235,4 +236,4 @@ const problem = makeExactCoverQueensProblem(grid);
 // console.log(problem.exact_cover_constraints);
 const solution = solve(problem);
 
-console.log(solution.join('\n'));
+console.log(solution.toSorted().join('\n'));
