@@ -1,0 +1,3 @@
+# En episodios anteriores...
+
+- Hicimos el algoritmo de Backtracking reutilizable utilizando el patrón [Template Method](https://en.wikipedia.org/wiki/Template_method_pattern)

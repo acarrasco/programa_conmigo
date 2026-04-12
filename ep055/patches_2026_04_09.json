@@ -1,0 +1,59 @@
+{
+    "rows": 6,
+    "columns": 6,
+    "restrictions": [
+        {
+            "row": 0,
+            "column": 2,
+            "size": 4,
+            "shape": "S"
+        },
+        {
+            "row": 0,
+            "column": 4,
+            "shape": "H"
+        },
+        {
+            "row": 1,
+            "column": 1,
+            "shape": "V",
+            "size": 4
+        },
+        {
+            "row": 1,
+            "column": 5,
+            "shape": "S"
+        },
+        {
+            "row": 2,
+            "column": 3,
+            "shape": "H",
+            "size": 2
+        },
+        {
+            "row": 3,
+            "column": 2,
+            "shape": "H",
+            "size": 4
+        },
+        {
+            "row": 4,
+            "column": 0,
+            "shape": "V"
+        }, {
+            "row": 4,
+            "column": 4,
+            "shape": "S",
+            "size": 4
+        }, {
+            "row": 5,
+            "column": 1,
+            "shape": "S"
+        }, {
+            "row": 5,
+            "column": 3,
+            "shape": "V",
+            "size": 2
+        }
+    ]
+}

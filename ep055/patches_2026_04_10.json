@@ -1,0 +1,51 @@
+{
+    "rows": 7,
+    "columns": 7,
+    "restrictions": [
+        {
+            "row": 0,
+            "column": 2,
+            "shape": "?"
+        },
+        {
+            "row": 0,
+            "column": 4,
+            "size": 3,
+            "shape": "?"
+        },
+        {
+            "row": 2,
+            "column": 1,
+            "shape": "?",
+            "size": 6
+        },
+        {
+            "row": 2,
+            "column": 5,
+            "shape": "?",
+            "size": 8
+        },
+        {
+            "row": 4,
+            "column": 1,
+            "shape": "?",
+            "size": 9
+        },
+        {
+            "row": 4,
+            "column": 5,
+            "shape": "?",
+            "size": 12
+        },
+        {
+            "row": 6,
+            "column": 2,
+            "shape": "?",
+            "size": 4
+        }, {
+            "row": 6,
+            "column": 4,
+            "shape": "?"
+        }
+    ]
+}
